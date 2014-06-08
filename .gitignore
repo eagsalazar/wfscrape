@@ -12,4 +12,5 @@
 # Ignore rvm stuff
 .rvmrc
 .ruby-gemset
+wf-*.gem
 
