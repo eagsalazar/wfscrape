@@ -1,5 +1,3 @@
-#!/usr/bin/env ruby
-
 require 'mechanize'
 
 class WF
@@ -33,7 +31,7 @@ class WF
         account = el.search('a.account').text.strip
         match = account.match(/^(.+) XXXXXX(.+)$/)
         @_accounts[match[2]] = {
-          balance: el.search('a.amount').text.strip.gsub("$", "").to_f,
+          balance: el.search('a.amount').text.strip.gsub(/[$,]/, "").to_f,
           name: match[1]
         }
       }
